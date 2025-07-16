@@ -45,6 +45,12 @@ public class UserService {
 	        return userRepository.save(user);
 	    }
 
+
+			
+		public void deleteUser(Long id) {
+	        userRepository.deleteById(id);
+	    }
+
 //	public Object getAllUser() {
 		// TODO Auto-generated method stub
 //		return userRepository.findAll();
