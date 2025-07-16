@@ -20,6 +20,18 @@ public class UserService {
 		// TODO Auto-generated method stub
 		return userRepository.save(user);
 	}
+
+
+	public Object getAllUser() {
+		// TODO Auto-generated method stub
+		 return userRepository.findAll();
+	}
+
+
+//	public Object getAllUser() {
+		// TODO Auto-generated method stub
+//		return userRepository.findAll();
+	//}
 	
 	
 
