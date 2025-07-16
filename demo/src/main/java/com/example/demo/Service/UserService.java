@@ -34,8 +34,16 @@ public class UserService {
 		 public Optional<User> getUserById(Long id) {
 		        return userRepository.findById(id);
 		    }
-	
 
+
+		
+	
+		public User updateUser(Long id, User userDetails) {
+	        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+	        user.setName(userDetails.getName());
+	        user.setMail(userDetails.getMail());
+	        return userRepository.save(user);
+	    }
 
 //	public Object getAllUser() {
 		// TODO Auto-generated method stub
