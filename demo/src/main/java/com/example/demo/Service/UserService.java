@@ -1,5 +1,7 @@
 package com.example.demo.Service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,13 @@ public class UserService {
 		// TODO Auto-generated method stub
 		 return userRepository.findAll();
 	}
+
+
+
+		 public Optional<User> getUserById(Long id) {
+		        return userRepository.findById(id);
+		    }
+	
 
 
 //	public Object getAllUser() {
