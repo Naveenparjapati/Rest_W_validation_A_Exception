@@ -17,7 +17,6 @@ public class UserService {
 	@Autowired
 	UserRepository userRepository;
 	
-	
 	public Object creatUser(@Valid User user) {
 		// TODO Auto-generated method stub
 		return userRepository.save(user);
@@ -29,33 +28,20 @@ public class UserService {
 		 return userRepository.findAll();
 	}
 
-
-
 		 public Optional<User> getUserById(Long id) {
 		        return userRepository.findById(id);
 		    }
 
-
-		
 	
 		public User updateUser(Long id, User userDetails) {
-	        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+	        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found check id again"));
 	        user.setName(userDetails.getName());
 	        user.setMail(userDetails.getMail());
 	        return userRepository.save(user);
 	    }
-
-
 			
 		public void deleteUser(Long id) {
 	        userRepository.deleteById(id);
 	    }
-
-//	public Object getAllUser() {
-		// TODO Auto-generated method stub
-//		return userRepository.findAll();
-	//}
-	
-	
 
 }
